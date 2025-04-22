@@ -1,30 +1,46 @@
-
 /* Hero Section Styling */
 header {
     display: flex;  /* Use flexbox for layout */
     justify-content: space-between;  /* Space out the text and image */
     align-items: center;  /* Vertically align the content */
     padding: 50px;  /* Adjust the padding as needed */
-  }
-  
-  /* Image Styling */
-  .hero-image {
-    width: 100px !important;  /* Set a smaller size for the image */
-    height: auto !important;  /* Maintain the aspect ratio */
-    max-width: 100%; 
-    border-radius: 50% !important;  /* Optional: Make the image circular */
-  }
-  /* Wordle Game */
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+    max-width: 1200px; /* Limit the width */
+    margin: 0 auto;  /* Center the header */
+    flex-direction: column; /* Stack content vertically */
+    text-align: center; /* Center the text */
 }
 
+.hero-image {
+    width: 100px !important;  /* Set a smaller size for the image */
+    height: auto !important;  /* Maintain the aspect ratio */
+    max-width: 100%;
+    border-radius: 50% !important;  /* Optional: Make the image circular */
+    margin-top: 20px;  /* Add space between the image and text */
+}
+
+/* General Page Layout */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: flex-start; /* Align content vertically */
+    flex-direction: column; /* Stack content vertically */
+    min-height: 100vh; /* Ensure the body takes full screen height */
+    margin: 0;
+    background-color: #f0f0f0;
+    padding-top: 20px;  /* Add space to the top */
+}
+
+.container {
+    max-width: 1200px; /* Limit the container width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+}
+
+section {
+    padding: 50px 20px; /* Adds more space between sections */
+}
+
+/* Wordle Game */
 .game-container {
     text-align: center;
     background-color: white;
@@ -32,6 +48,7 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 300px;
+    margin: 0 auto; /* Center the game container */
 }
 
 h1 {
@@ -70,4 +87,27 @@ button {
 
 button:hover {
     background-color: #f4f4f4;
+}
+
+/* Optional: Add a reset to fix layout issues */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .col-md-4 {
+        width: 100%; /* Makes columns take up the full width on smaller screens */
+    }
+
+    .game-container {
+        width: 100%;
+        max-width: 400px; /* Ensures the game doesn't stretch too wide */
+    }
+
+    .hero-image {
+        width: 150px !important; /* Adjust the hero image size on small screens */
+    }
 }
